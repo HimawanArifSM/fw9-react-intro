@@ -9,9 +9,9 @@ const Series = ({name})=>{
   return (
     <Container>
     <Row className="text-align-center">
-    <Col><button onClick={()=>result(act-1)}>-</button></Col>
-    <Col>{act}</Col>
-    <Col><button onClick={()=>result(act+1)}>+</button></Col>
+    <Col><button onClick={()=>result(act-1)}>-</button>
+    <>{act}</>
+    <button onClick={()=>result(act+1)}>+</button></Col>
     </Row>
     </Container>
   )
