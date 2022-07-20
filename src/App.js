@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import {Col, Row, Container} from "react-bootstrap"
 
-function App() {
+const Series = ({name})=>{
+  const [act, result]=React.useState(0)
+  React.useEffect(()=>{
+    console.log(act)
+  },[act])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+    <Row className="text-align-center">
+    <Col><button onClick={()=>result(act-1)}>-</button></Col>
+    <Col>{act}</Col>
+    <Col><button onClick={()=>result(act+1)}>+</button></Col>
+    </Row>
+    </Container>
+  )
 }
 
-export default App;
+export default Series
+
+// class Series extends React.Component{
+//   render(){
+//     return (
+//       <>
+//         <>{this.props.name}</>
+//       </>
+//     )
+//   }
+// }
+
+// class App extends React.Component{
+//   render(){
+//     return(
+//       <>
+//         <button onClick={()=>this.setState()}>-</button>
+//         <Series name={(0)}></Series>
+//         <button onClick={()=>this.setState()}>+</button>
+//       </>
+//     )
+//   }
+// }
+
+// export default App
+
