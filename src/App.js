@@ -1,5 +1,5 @@
 import React from "react"
-import {Col, Row, Container} from "react-bootstrap"
+import {Col, Container} from "react-bootstrap"
 
 const Series = ({name})=>{
   const [act, result]=React.useState(0)
@@ -7,12 +7,12 @@ const Series = ({name})=>{
     console.log(act)
   },[act])
   return (
-    <Container>
-    <Row className="text-align-center">
-    <Col><button onClick={()=>result(act-1)}>-</button>
-    <>{act}</>
+    <Container className="min-vh-100 d-flex justify-content-center align-items-center">
+    <section>
+    <Col className="d-flex flex-row d-flex gap-3"><button disabled={act<1} onClick={()=>result(act-1)}>-</button>
+    <h1>{act}</h1>
     <button onClick={()=>result(act+1)}>+</button></Col>
-    </Row>
+    </section>
     </Container>
   )
 }
